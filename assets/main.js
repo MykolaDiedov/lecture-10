@@ -1,13 +1,18 @@
 const toDoList = {
     tasks: [],
    
-    result: {
-       
-        //total: this.tasks.length,
-        //complete: 
-        //unComplete:
+    getStatistics() {
+        const result = {
+           total: this.tasks.length,
+        };
+        const completed = this.tasks.filter((i) => i.isComplete).length;
 
+        result.completed = completed;
+        result.inComplete = result.total - completed;
+
+        return result;
     },
+        
     
     
     addTasks(text) {
